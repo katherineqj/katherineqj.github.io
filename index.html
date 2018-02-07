@@ -1,954 +1,274 @@
 <!DOCTYPE html>
-
-
-
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="艺高人胆大，美丽即正义">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      三颗炸丸子
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
 
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="艺高人胆大，美丽即正义">
-<meta property="og:type" content="website">
-<meta property="og:title" content="三颗炸丸子">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="三颗炸丸子">
-<meta property="og:description" content="艺高人胆大，美丽即正义">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三颗炸丸子">
-<meta name="twitter:description" content="艺高人胆大，美丽即正义">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>三颗炸丸子</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
   
-
-
-
-
-
-
 
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-    <a href="https://github.com/katherineqj" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">三颗炸丸子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>三颗炸丸子</span>
+    </a>
+    <ul class="right-list">
       
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
         </li>
       
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
         </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
         </li>
       
-
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
       
     </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/了解ProGuard/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="katherine qin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三颗炸丸子">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/22/了解ProGuard/" itemprop="url">了解ProGuard</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T14:26:33+08:00">
-                2018-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,190
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="ProGuard"><a href="#ProGuard" class="headerlink" title="ProGuard"></a>ProGuard</h1><p>​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了，就是不想自己的代码被破解，增加别人反编译的难度，android中的混淆规则写在proguard-rules.pro中，有一些特定的命令规则，我听的云里雾里的，特定规则是什么？混淆又是怎么做的？不敢问了不敢问了，自己查资料吧。所以自己上<a href="https://www.guardsquare.com/en" target="_blank" rel="noopener">guardsquare</a>的官网去看了看（也算是一遍翻译一边总结）。</p>
-<p><strong>目标收获：了解ProGuard是什么，有自己的理解能够给别人讲清楚，以及和AndroidStudio的联系，以及能熟悉一遍相关语法吧</strong>。</p>
-<h3 id="一-ProGuard简介"><a href="#一-ProGuard简介" class="headerlink" title="一.ProGuard简介"></a>一.ProGuard简介</h3><p>guardsquare官网有这样一句话—</p>
-<blockquote>
-<h5 id="A-complete-Android-application"><a href="#A-complete-Android-application" class="headerlink" title="A complete Android application"></a>A complete Android application</h5><p>The standard build processes of the Android SDK (with Ant, Gradle, Android Studio and Eclipse) already integrate ProGuard with all the proper settings. </p>
-</blockquote>
-<h5 id="一个完整的Android应用程序"><a href="#一个完整的Android应用程序" class="headerlink" title="一个完整的Android应用程序"></a>一个完整的Android应用程序</h5><p>Android SDK的标准构建过程（包括Ant，Gradle，Android Studio和Eclipse）已经将ProGuard与所有正确的设置集成在一起。</p>
-<p>注意：已经将ProGuard与<strong>所有正确的设置</strong>集成在一起。</p>
-<p>那就有这样的疑问：ProGuard是什么？为什么要用这个东西，他有什么作用？什么算正确的设置？</p>
-<p>一个一个问题解决</p>
-<ul>
-<li><h4 id="ProGuard是什么"><a href="#ProGuard是什么" class="headerlink" title="ProGuard是什么"></a>ProGuard是什么</h4></li>
-</ul>
-<p>​      ProGuard是一个java字节码的开源优化器，他拥有四个部分，<strong>Java类文件收缩器，优化器，混淆器和预校验器</strong>。通过这四个步骤，它可以删除无用的类、字段、方法和属性。可以删除没用的注释，最大限度地优化字节码文件。它还可以使用简短的无意义的名称来重命名已经存在的类、字段、方法和属性。常常用于Android开发用于混淆最终的项目，增加项目被反编译的难度。</p>
-<p><strong>原来不仅仅可以混淆代码防止反编译，它还可以优化我们的代码</strong> 所以这四个步骤肯定各自有各自的的作用</p>
-<ul>
-<li><h4 id="ProGuard的作用"><a href="#ProGuard的作用" class="headerlink" title="ProGuard的作用"></a>ProGuard的作用</h4><p>最终目标：ProGuard减少了Android应用程序的下载和启动时间，并提高了它们在移动设备上的性能。</p>
-<ol>
-<li><p>Java类文件收缩器(shrink)：这一步进行的压缩步骤，从入口点开始递归的确定使用哪些类和类成员，其他的没有被用到的类和类成员就被丢弃</p>
-</li>
-<li><p>优化器(optimize)：进行的优化步骤，ProGuard会进一步优化代码，这一步属于在字节码级别的性能优化，可以将不是入口点的类和方法变成私有的静态的或最终的（在可能的情况下为类添加static和final修饰符，在可能的情况下为方法添加private, static和final修饰符）未使用的参数可以移除，并且可以内联一些方法（在可能的情况下使get/set方法成为内联的）</p>
-</li>
-<li><p>混淆器(obfuscate) : 在混淆步骤中，ProGuard会重命名不是入口点的类和类成员，比如使用a，b，c，d这样简短而无意义的名称，对类、字段和方法进行重命名。在这整个过程中，保持入口点确保他们仍然可以通过他们原来的名字被访问。</p>
-</li>
-<li><p>预校验器( preverify)：在Java平台上对处理后的代码进行预检，确保加载的class文件是可执行的。这个步骤是不必知道入口点的唯一步骤</p>
-<p><img src="/images/ProGuard.png" alt=""></p>
-</li>
-</ol>
-</li>
-</ul>
-<p>​                                                                      图：来自官网的工作流程图</p>
-<p> 上面四个步骤中三个都提到了<strong>入口点</strong>（Entry Point），那么什么是入口点呢？</p>
-<p> 入口点是在ProGuard过程中不会被处理的类或方法。在压缩的步骤中，ProGuard会从入口点开始递归遍历，搜索哪些类和类的成员在使用。对于没有被使用的类和类的成员，就会在压缩阶段丢弃。在优化阶段，那些非EntryPoint的类、方法都会被设置为private、static或final，不使用的参数会被移除。在混淆的阶段，ProGuard会对非EntryPoint的类和方法进行重命名。 为了能够确定哪些代码必须被保留以及哪些代码可以被丢弃或模糊处理，就必须指定一个或多个代码入口点 。（ProGuard文件中我们写的保持的那些我感觉就是写的入口点）</p>
-<ul>
-<li><h4 id="ProGuard正确的设置"><a href="#ProGuard正确的设置" class="headerlink" title="ProGuard正确的设置"></a>ProGuard正确的设置</h4></li>
-</ul>
-<p>关于设置AndroidStudio以及具备了ProGuard的所有步骤，但是我们要针对制定一些关于自己APP的ProGuard规则，写在proguard-rules.pro 中。比如对以上四个步骤 哪一个执行哪一个不执行的配置，再比如我们要去保留入口点不被混淆。网上有很多关于ProGuard的正确设置模版 那针对一个APP，我们应该从哪些方面去Add project specific ProGuard rules ？？？</p>
-<p>那就是第二个大部分 如何写proguard-rules文件</p>
-<h3 id="二-编写ProGuard文件"><a href="#二-编写ProGuard文件" class="headerlink" title="二.编写ProGuard文件"></a>二.编写ProGuard文件</h3><p>注意：以下内容可能不全是ProGuard的语法，只针对于Android应用开发</p>
-<p>四个步骤都可以去配置,先熟悉一遍语法（可以的话可以看英文，后面是我乱七八糟翻译的，可能有出入）</p>
-<h4 id="shrink压缩阶段："><a href="#shrink压缩阶段：" class="headerlink" title="shrink压缩阶段："></a>shrink压缩阶段：</h4><h4 id="dontshrink"><a href="#dontshrink" class="headerlink" title="-dontshrink"></a><strong><code>-dontshrink</code></strong></h4><blockquote>
-<p>Specifies not to shrink the input class files. By default, shrinking is applied; all classes and class members are removed, except for the ones listed by the various <code>-keep</code> options, and the ones on which they depend, directly or indirectly. A shrinking step is also applied after each optimization step, since some optimizations may open the possibility to remove more classes and class members.<strong>（指定不压缩输入文件，默认情况下，是会执行压缩步骤的。除了<code>-keep</code>相关配置指定的类，所有其它没有被引用到的类都会被删除，在每一次优化步骤执行完之后，也会进行一次压缩操作，因为在优化的时候可能会删除更多的类和类成员）</strong></p>
-</blockquote>
-<p><code>-printusage [filename]</code> </p>
-<blockquote>
-<p>Specifies to list dead code of the input class files. The list is printed to the standard output or to the given file. For example, you can list the unused code of an application. Only applicable when shrinking.<strong>（指定这个文件里是打印那些被删除的类文件，这个列表可能打印到标准输出流或者一个文件中例如你可以指定哪些代码是不使用的，仅仅适用于shrink阶段）</strong></p>
-</blockquote>
-<p><code>-whyareyoukeeping class_specification</code></p>
-<blockquote>
-<p>Specifies to print details on why the given classes and class members are being kept in the shrinking step. This can be useful if you are wondering why some given element is present in the output. In general, there can be many different reasons. This option prints the shortest chain of methods to a specified seed or entry point, for each specified class and class member. <em>In the current implementation, the shortest chain that is printed out may sometimes contain circular deductions – these do not reflect the actual shrinking process.</em> If the <a href="https://www.guardsquare.com/proguard/manual/usage#verbose" target="_blank" rel="noopener"><code>-verbose</code></a> option if specified, the traces include full field and method signatures. Only applicable when shrinking.<strong>（简单来说就是给一个说法为啥这个类特殊被保护了呢？仅适用于压缩阶段）</strong></p>
-</blockquote>
-<h4 id="optimize-优化阶段："><a href="#optimize-优化阶段：" class="headerlink" title="optimize 优化阶段："></a>optimize 优化阶段：</h4><p><code>-dontoptimize</code></p>
-<blockquote>
-<p>Specifies not to optimize the input class files. By default, optimization is enabled; all methods are optimized at a bytecode level.<strong>（指定不优化输入文件，默认情况下优化选项是开启的，并且所有的优化都是在字节码层进行的。）</strong></p>
-</blockquote>
-<p><code>-optimizations</code></p>
-<blockquote>
-<p>Specifies the optimizations to be enabled and disabled, at a more fine-grained level. Only applicable when optimizing. <em>This is an expert option.</em> <strong>（专家选项，慎用，就是优化的更加精细的意思吧）</strong></p>
-</blockquote>
-<p><code>-optimizationpasses n</code></p>
-<blockquote>
-<p>Specifies the number of optimization passes to be performed. By default, a single pass is performed. Multiple passes may result in further improvements. If no improvements are found after an optimization pass, the optimization is ended. Only applicable when optimizing.<strong>（指定执行几次优化，默认情况下，只执行一次优化。执行多次优化可以提高优化的效果，如果执行过一次优化之后没有效果，就会停止优化，剩下的设置次数不再执行。这个选项只在<code>optimizate</code>阶段有效）</strong></p>
-</blockquote>
-<p><code>-assumenosideeffects class_specification</code></p>
-<blockquote>
-<p>Specifies methods that don’t have any side effects (other than maybe returning a value). In the optimization step, ProGuard will then remove calls to such methods, if it can determine that the return values aren’t used. ProGuard will analyze your program code to find such methods automatically. It will not analyze library code, for which this option can therefore be useful. For example, you could specify the method <code>System.currentTimeMillis()</code>, so that any idle calls to it will be removed. With some care, you can also use the option to <a href="https://www.guardsquare.com/proguard/manual/examples#logging" target="_blank" rel="noopener">remove logging code</a>. Note that ProGuard applies the option to the entire hierarchy of the specified methods. Only applicable when optimizing. In general, making assumptions can be dangerous; you can easily break the processed code. <em>Only use this option if you know what you’re doing!</em> <strong>(指定一些方法是没有任何意义的方法，可能他会有返回值，在优化阶段，如果他的返回值没有被用到ProGuard将会把这个方法删除，proguard会自动的分析你的代码，但不会分析处理类库中的代码。反正谨慎使用)</strong></p>
-</blockquote>
-<p><code>-allowaccessmodification</code></p>
-<blockquote>
-<p>Specifies that the access modifiers of classes and class members may be broadened during processing. This can improve the results of the optimization step. For instance, when inlining a public getter, it may be necessary to make the accessed field public too. Although Java’s binary compatibility specifications formally do not require this (cfr. <a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/j3TOC.html" target="_blank" rel="noopener">The Java Language Specification, Third Edition</a>, <a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/binaryComp.html#13.4.6" target="_blank" rel="noopener">Section 13.4.6</a>), some virtual machines would have problems with the processed code otherwise. Only applicable when optimizing (and when obfuscating with the <a href="https://www.guardsquare.com/proguard/manual/usage#repackageclasses" target="_blank" rel="noopener"><code>-repackageclasses</code></a> option).Counter-indication:<em> you probably shouldn’t use this option when processing code that is to be used as a library, since classes and class members that weren’t designed to be public in the API may become public.<em>*( 指定在处理期间可以扩大类和类成员的访问修饰符。这可以改善优化步骤的结果,但是如果你的代码是一个组件库代码的时候，就不要使用这个选项，他可能会将一些私有的部分变为public的)</em></em></p>
-</blockquote>
-<p><code>-mergeinterfacesaggressively</code></p>
-<blockquote>
-<p>Specifies that interfaces may be merged, even if their implementing classes don’t implement all interface methods. This can reduce the size of the output by reducing the total number of classes. Note that Java’s binary compatibility specifications allow such constructs (cfr. <a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/j3TOC.html" target="_blank" rel="noopener">The Java Language Specification, Third Edition</a>, <a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/binaryComp.html#13.5.3" target="_blank" rel="noopener">Section 13.5.3</a>), even if they are not allowed in the Java language (cfr. <a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/j3TOC.html" target="_blank" rel="noopener">The Java Language Specification, Third Edition</a>, <a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/classes.html#8.1.4" target="_blank" rel="noopener">Section 8.1.4</a>). Only applicable when optimizing.<em>Counter-indication:</em> setting this option can reduce the performance of the processed code on some JVMs, since advanced just-in-time compilation tends to favor more interfaces with fewer implementing classes. Worse, some JVMs may not be able to handle the resulting code. Notably: Sun’s JRE 1.3 may throw an <code>InternalError</code>when encountering more than 256 <em>Miranda</em> methods (interface methods without implementations) in a class.<strong>( 指定一些接口可以被合并即使他的实现类没有实现全部的接口，这可以通过减少类的总数来减少输出文件体积的大小)</strong></p>
-</blockquote>
-<h4 id="obfuscate-混淆阶段"><a href="#obfuscate-混淆阶段" class="headerlink" title="obfuscate 混淆阶段"></a>obfuscate 混淆阶段</h4><p><code>-dontobfuscate</code></p>
-<blockquote>
-<p>Specifies not to obfuscate the input class files. By default, obfuscation is applied; classes and class members receive new short random names, except for the ones listed by the various <code>-keep</code> options. Internal attributes that are useful for debugging, such as source files names, variable names, and line numbers are removed.<strong>(指定不要混淆输入的类文件。默认情况下，应用混淆。类和类成员会收到新的短随机名称，除了各种<code>-keep</code>选项列出的名称外。对调试有用的内部属性，例如源文件名称，变量名称和行号被删除。)</strong></p>
-</blockquote>
-<p><code>-printmapping [filename]</code></p>
-<blockquote>
-<p>Specifies to print the mapping from old names to new names for classes and class members that have been renamed. The mapping is printed to the standard output or to the given file. For example, it is required for subsequent <a href="https://www.guardsquare.com/proguard/manual/examples#incremental" target="_blank" rel="noopener">incremental obfuscation</a>, or if you ever want to make sense again of <a href="https://www.guardsquare.com/proguard/manual/examples#stacktrace" target="_blank" rel="noopener">obfuscated stack traces</a>. Only applicable when obfuscating.<strong>(指定输出旧名称到已被重命名的类和类成员名称的映射，后续想知道混淆的路径是可以参考的，只在混淆时适用)</strong></p>
-</blockquote>
-<p><code>-applymapping filename</code></p>
-<blockquote>
-<p>Specifies to reuse the given name mapping that was printed out in a previous obfuscation run of ProGuard. Classes and class members that are listed in the mapping file receive the names specified along with them. Classes and class members that are not mentioned receive new names. The mapping may refer to input classes as well as library classes. This option can be useful for <a href="https://www.guardsquare.com/proguard/manual/examples#incremental" target="_blank" rel="noopener">incremental obfuscation</a>, i.e. processing add-ons or small patches to an existing piece of code. If the structure of the code changes fundamentally, ProGuard may print out warnings that applying a mapping is causing conflicts. You may be able to reduce this risk by specifying the option <a href="https://www.guardsquare.com/proguard/manual/usage#useuniqueclassmembernames" target="_blank" rel="noopener"><code>-useuniqueclassmembernames</code></a> in both obfuscation runs. Only a single mapping file is allowed. Only applicable when obfuscating.<strong>(指定重用一个已经写好了的map文件作为新旧元素名的映射。元素名已经存在在mapping文件中的元素，按照映射表重命名；没有存在到mapping文件的元素，重新赋一个新的名字，只在混淆时适用)</strong></p>
-</blockquote>
-<p>。。。</p>
-<p>还是附上一个链接 <a href="https://www.jianshu.com/p/60e82aafcfd0" target="_blank" rel="noopener">相当于语法指南</a>（希望原作者不要介意啊  ）更详细的可以去里面查阅 因为官网是英文的 可能不太好看</p>
-<p>初步的了解就看到这里了 </p>
-<p>等之后再继续完善这部分的内容</p>
-
-          
-        
-      
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-    <div>
-  
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/The-new-Life/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="katherine qin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三颗炸丸子">
-    </span>
-
-    
-      <header class="post-header">
-
+    <div class="menu-mask">
+      <ul class="menu-list">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/The-new-Life/" itemprop="url">TheNewLife</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <li class="menu-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T20:09:55+08:00">
-                2017-12-29
-              </time>
+              <a href="/" class="menu-link mobile-active">Home</a>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  388
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+          </li>
         
-          
-            <h2 id="嘿，以后会越来越好的"><a href="#嘿，以后会越来越好的" class="headerlink" title="嘿，以后会越来越好的"></a>嘿，以后会越来越好的</h2><p>日子好长啊 今天好像也是我21岁的生日，</p>
-<p>并不觉得特别开心，北京的风总是吹的人眼睛酸酸</p>
-<p>你看我现在坐在工位上，可感觉是风能吹过厚厚的墙壁</p>
-<p>对啊，你看现在又吹的眼睛酸酸了</p>
-<p>怎么说呢，也许是三方拿到了 真真正正的觉得有些事情踏出去了没办法回头的</p>
-<p>所有都确定了呢，并不觉得轻松</p>
-<p>也许别人刚刚抵达学生时代的终点，我总觉得，不甘心的我觉得 这是我新的起点</p>
-<p>我们组的人都很好，有一个小姐姐，也有不错的老大，还有害羞的小师傅，</p>
-<p>可是我这心里 ，为什么总觉得差点什么呢？</p>
-<p>也许只有我知道差点什么吧</p>
-<p>人总是要像前看的对吧</p>
-<p>看我身后有个小哥哥，刚刚拿了一桶泡面</p>
-<p>怕是心里也怀抱着满腔的热血和不甘，想让自己更好一点，再好一点。</p>
-<p>谁又是容易的呢？</p>
-<p>轻轻的给自己讲一句加油，鼓足了勇气。</p>
-<p>再努力一点 ，再努力一点</p>
-<p>小姑娘，你很棒的啦！</p>
-<p>我们开心点面对生活，努力做好自己的事情，养成一个好习惯。</p>
-<p>以后会越来越好的。</p>
-<p>你要爱上这座刮风的城市，习惯城市里的大风</p>
-<p>还要努力一点别让眼睛酸酸。</p>
-<p>21岁的你，长大啦。</p>
-
-          
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-    <div>
-  
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
     </div>
   </div>
+</header>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/06/我们一起用AndroidStudio写一个自定义的Gradle插件/">我们一起用AndroidStudio写一个自定义的Gradle插件</a>
+      </h2>
+      <p class="article-date">February 6, 2018</p>
+      
+        
+  <a href="/tags#Android" >
+    <span class="tag-code">Android</span>
+  </a>
+
+  <a href="/tags#Gradle" >
+    <span class="tag-code">Gradle</span>
+  </a>
 
       
+      <div class="article-summary">
+        
+          我们一起用AndroidStudio写一个自定义的Gradle插件吧
+注：这篇文章注重实际操作，插图丰富，易于理解上手。 对于理论知识的解释我自己也一头雾水，所以跟着我做就好啦。我也慢慢在学嘛
 
-      
+我把这个整个过程分为三部
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="katherine qin" />
-            
-              <p class="site-author-name" itemprop="name">katherine qin</p>
-              <p class="site-description motion-element" itemprop="description">艺高人胆大，美丽即正义</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
+创建项目和插件，
+完善插件内容和配置，
+打包发布并且正确引用自定义插 ...
         
       </div>
-    </main>
+      <a class="more" href="/2018/02/06/我们一起用AndroidStudio写一个自定义的Gradle插件/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/01/22/了解ProGuard/">了解ProGuard</a>
+      </h2>
+      <p class="article-date">January 22, 2018</p>
+      
+        
+  <a href="/tags#Android" >
+    <span class="tag-code">Android</span>
+  </a>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-<i class="fa fa-gratipay" aria-hidden="true"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">katherine qin</span>
+      
+      <div class="article-summary">
+        
+          ProGuard​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了， ...
+        
+      </div>
+      <a class="more" href="/2018/01/22/了解ProGuard/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/12/29/The-new-Life/">TheNewLife</a>
+      </h2>
+      <p class="article-date">December 29, 2017</p>
+      
+        
+  <a href="/tags#碎碎念" >
+    <span class="tag-code">碎碎念</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          嘿，以后会越来越好的日子好长啊 今天好像也是我21岁的生日，
+并不觉得特别开心，北京的风总是吹的人眼睛酸酸
+你看我现在坐在工位上，可感觉是风能吹过厚厚的墙壁
+对啊，你看现在又吹的眼睛酸酸了
+怎么说呢，也许是三方拿到了 真真正正的觉得有些事情踏出去了没办法回头的
+所有都确定了呢，并不觉得轻松
+ ...
+        
+      </div>
+      <a class="more" href="/2017/12/29/The-new-Life/">Read more</a>
+    </article>
+  
 
   
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
 </div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
 
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
-
-<!--
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
-
--->
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
   }
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-</body>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
 </html>
-<script type="text/javascript" src="/js/src/love.js"></script>

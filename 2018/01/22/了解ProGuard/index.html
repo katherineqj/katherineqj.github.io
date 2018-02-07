@@ -1,349 +1,153 @@
 <!DOCTYPE html>
-
-
-
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="艺高人胆大，美丽即正义">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      了解ProGuard | 三颗炸丸子
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
 
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Android," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="ProGuard​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了，就是不想自己的代码被破解，增加别人反编译的难度，android中的混淆规则写在proguard-rules.">
-<meta name="keywords" content="Android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="了解ProGuard">
-<meta property="og:url" content="http://yoursite.com/2018/01/22/了解ProGuard/index.html">
-<meta property="og:site_name" content="三颗炸丸子">
-<meta property="og:description" content="ProGuard​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了，就是不想自己的代码被破解，增加别人反编译的难度，android中的混淆规则写在proguard-rules.">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/ProGuard.png">
-<meta property="og:updated_time" content="2018-01-22T06:36:33.685Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="了解ProGuard">
-<meta name="twitter:description" content="ProGuard​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了，就是不想自己的代码被破解，增加别人反编译的难度，android中的混淆规则写在proguard-rules.">
-<meta name="twitter:image" content="http://yoursite.com/images/ProGuard.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/01/22/了解ProGuard/"/>
-
-
-
-
-
-  <title>了解ProGuard | 三颗炸丸子</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
   
-
-
-
-
-
-
 
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-    <a href="https://github.com/katherineqj" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">三颗炸丸子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>三颗炸丸子</span>
+    </a>
+    <ul class="right-list">
       
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
         </li>
       
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
         </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
         </li>
       
-
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
       
     </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/了解ProGuard/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="katherine qin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三颗炸丸子">
-    </span>
-
-    
-      <header class="post-header">
-
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
         
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
         
-          <h1 class="post-title" itemprop="name headline">了解ProGuard</h1>
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
         
-
-        <div class="post-meta">
-          <span class="post-time">
+          <li class="menu-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T14:26:33+08:00">
-                2018-01-22
-              </time>
+              <a href="/archives/" class="menu-link">Archives</a>
             
-
+          </li>
+        
+          <li class="menu-item">
             
-
+              <a href="/project/" class="menu-link">Projects</a>
             
-          </span>
-
-          
-
-          
+          </li>
+        
+          <li class="menu-item">
             
-          
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
 
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,190
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="ProGuard"><a href="#ProGuard" class="headerlink" title="ProGuard"></a>ProGuard</h1><p>​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了，就是不想自己的代码被破解，增加别人反编译的难度，android中的混淆规则写在proguard-rules.pro中，有一些特定的命令规则，我听的云里雾里的，特定规则是什么？混淆又是怎么做的？不敢问了不敢问了，自己查资料吧。所以自己上<a href="https://www.guardsquare.com/en" target="_blank" rel="noopener">guardsquare</a>的官网去看了看（也算是一遍翻译一边总结）。</p>
+    <div id="article-banner">
+  <h2>了解ProGuard</h2>
+  <p class="post-date">2018-01-22</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="ProGuard"><a href="#ProGuard" class="headerlink" title="ProGuard"></a>ProGuard</h1><p>​      最近小师傅让我学习了解一下Android中的代码混淆，混淆是啥啊？？我这个嘴啊立马就问出来了 小师傅解释说：我们apk其实可以看作一个压缩包，你改一个后缀名解压缩之后里面的资源文件，配置以及源代码都可以完全呈现，混淆之后会把一些类和方法的名字改变，就很难追踪了，就是不想自己的代码被破解，增加别人反编译的难度，android中的混淆规则写在proguard-rules.pro中，有一些特定的命令规则，我听的云里雾里的，特定规则是什么？混淆又是怎么做的？不敢问了不敢问了，自己查资料吧。所以自己上<a href="https://www.guardsquare.com/en" target="_blank" rel="noopener">guardsquare</a>的官网去看了看（也算是一遍翻译一边总结）。</p>
 <p><strong>目标收获：了解ProGuard是什么，有自己的理解能够给别人讲清楚，以及和AndroidStudio的联系，以及能熟悉一遍相关语法吧</strong>。</p>
 <h3 id="一-ProGuard简介"><a href="#一-ProGuard简介" class="headerlink" title="一.ProGuard简介"></a>一.ProGuard简介</h3><p>guardsquare官网有这样一句话—</p>
 <blockquote>
@@ -434,408 +238,222 @@
 <p>还是附上一个链接 <a href="https://www.jianshu.com/p/60e82aafcfd0" target="_blank" rel="noopener">相当于语法指南</a>（希望原作者不要介意啊  ）更详细的可以去里面查阅 因为官网是英文的 可能不太好看</p>
 <p>初步的了解就看到这里了 </p>
 <p>等之后再继续完善这部分的内容</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Android" >
+    <span class="tag-code">Android</span>
+  </a>
 
-      
-    </div>
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2017/12/29/The-new-Life/">
+        <span class="nav-arrow">← </span>
+        
+          TheNewLife
+        
+      </a>
     
     
+      <a class="nav-right" href="/2018/02/06/我们一起用AndroidStudio写一个自定义的Gradle插件/">
+        
+          我们一起用AndroidStudio写一个自定义的Gradle插件
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
-
-    
-
-    
-
-    
-    <div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">
-            -------------结束啦
-<i class="fa fa-heart-o" aria-hidden="true"></i>
-            谢谢您的阅读 啾-------------
-        </div>
-    
-</div>
-  
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/12/29/The-new-Life/" rel="next" title="TheNewLife">
-                <i class="fa fa-chevron-left"></i> TheNewLife
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
-  
-  
-  
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
   </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ProGuard"><span class="toc-nav-text">ProGuard</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一-ProGuard简介"><span class="toc-nav-text">一.ProGuard简介</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#A-complete-Android-application"><span class="toc-nav-text">A complete Android application</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#一个完整的Android应用程序"><span class="toc-nav-text">一个完整的Android应用程序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ProGuard是什么"><span class="toc-nav-text">ProGuard是什么</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ProGuard的作用"><span class="toc-nav-text">ProGuard的作用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ProGuard正确的设置"><span class="toc-nav-text">ProGuard正确的设置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二-编写ProGuard文件"><span class="toc-nav-text">二.编写ProGuard文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#shrink压缩阶段："><span class="toc-nav-text">shrink压缩阶段：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dontshrink"><span class="toc-nav-text">-dontshrink</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#optimize-优化阶段："><span class="toc-nav-text">optimize 优化阶段：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#obfuscate-混淆阶段"><span class="toc-nav-text">obfuscate 混淆阶段</span></a></li></ol></li></ol></li></ol></li></ol>
+    
   </div>
-
-
-          </div>
-          
-
-
-          
-
+</aside>
   
+  <!-- Catalog END -->
+</main>
 
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/01/22/了解ProGuard/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
 
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
 
-        </div>
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
 
-      
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
 
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="katherine qin" />
-            
-              <p class="site-author-name" itemprop="name">katherine qin</p>
-              <p class="site-description motion-element" itemprop="description">艺高人胆大，美丽即正义</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ProGuard"><span class="nav-number">1.</span> <span class="nav-text">ProGuard</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-ProGuard简介"><span class="nav-number">1.0.1.</span> <span class="nav-text">一.ProGuard简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#A-complete-Android-application"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">A complete Android application</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一个完整的Android应用程序"><span class="nav-number">1.0.1.0.2.</span> <span class="nav-text">一个完整的Android应用程序</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProGuard是什么"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">ProGuard是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProGuard的作用"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">ProGuard的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProGuard正确的设置"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">ProGuard正确的设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-编写ProGuard文件"><span class="nav-number">1.0.2.</span> <span class="nav-text">二.编写ProGuard文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#shrink压缩阶段："><span class="nav-number">1.0.2.1.</span> <span class="nav-text">shrink压缩阶段：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dontshrink"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">-dontshrink</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#optimize-优化阶段："><span class="nav-number">1.0.2.3.</span> <span class="nav-text">optimize 优化阶段：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#obfuscate-混淆阶段"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">obfuscate 混淆阶段</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-<i class="fa fa-gratipay" aria-hidden="true"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">katherine qin</span>
-
-  
-</div>
-
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
-
-<!--
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
-
--->
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    // gitment
+    var gitmentConfig = "Katherineqj";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "了解ProGuard",
+        owner: "Katherineqj",
+        repo: "Katherineqj.github.io",
+        oauth: {
+          client_id: "0f678d090b2b6e29b38c",
+          client_secret: "0d4806c196763134cc735f431afd49dd7fff21dd"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-</body>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
 </html>
-<script type="text/javascript" src="/js/src/love.js"></script>

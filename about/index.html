@@ -10,7 +10,7 @@
   
   <title>
     
-      三颗炸丸子
+      About | 三颗炸丸子
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -137,58 +137,52 @@
   </div>
 </header>
 
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
+    <div id="about-banner" style="background-image: url(https://github.com/katherineqj/MIAOMIAO/blob/master/banner.jpg)"></div>
+<div class="author">
+  <div class="head">
+    <img src="https://github.com/katherineqj/MIAOMIAO/blob/master/kathie.jpg" />
+  </div>
+  <h3>katherine qin</h3>
+  
+    <p class="description">艺高人胆大，美丽即正义</p>
+  
+  <section class="share-icons">
+    
+    
+    
+      <a class="icon-github" href="https://github.com/katherineqj" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    
+    
+      <a class="icon-zhihu" href="https://www.zhihu.com/people/da-chui-mei-75" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-stack-1x fa-inverse">知</i>
+        </span>
+      </a>
+    
+    
+  </section>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2018
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2018/02/06/我们一起用AndroidStudio写一个自定义的Gradle插件/" class="archive-title">我们一起用AndroidStudio写一个自定义的Gradle插件</a>
-        <p class="archive-date">02-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2018/01/22/了解ProGuard/" class="archive-title">了解ProGuard</a>
-        <p class="archive-date">01-22</p>
-      </div>
-    
-  </div>
-</section>
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/12/29/The-new-Life/" class="archive-title">TheNewLife</a>
-        <p class="archive-date">12-29</p>
-      </div>
-    
-  </div>
-</section>
-  
-</main>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/archives/2017/12/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    $('.header').removeClass('fixed-header')
+    var windowH = $(window).height();
+    var author = $('.author')
+    var bodyH = author.offset().top + author[0].offsetHeight + 71;
+    if (bodyH < windowH) {
+      author.css({
+        'margin-bottom': windowH - bodyH
+      })
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
