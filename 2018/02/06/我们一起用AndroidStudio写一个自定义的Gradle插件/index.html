@@ -157,18 +157,19 @@
 <li>打包发布并且正确引用自定义插件</li>
 </ol>
 <h3 id="一-创建项目和插件"><a href="#一-创建项目和插件" class="headerlink" title="一.创建项目和插件"></a>一.创建项目和插件</h3><p>我们写一个gradle插件是为了用在android项目中，我们先创建一个android项目起名字叫做DemoPlugin</p>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/1.png" alt=""></p>
+<p><img src="/images/demoplugin/1.png" alt=""></p>
 <p>  那创建好项目好之后就要开始写插件了 ，可能会想是不是要去new一个xxxPlugin啊，可是我们会发现AndroidStudio中并没有这样后缀的项目正确的做法是 我们创建一个library类型的module 。那下面我的这个插件起名字叫kathiePlugin</p>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/2.png" alt="这里写图片描述"></p>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/3.png" alt="这里写图片描述"><br><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/4.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/2.png" alt=""></p>
+<p><img src="/images/demoplugin/3.png" alt=""></p>
+<p><img src="/images/demoplugin/4.png" alt=""></p>
 <ul>
 <li>点击完finish之后。来看看是不是创建了这样一个插件呢，他的目录结构是图中红框的部分， </li>
 </ul>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/5.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/5.png" alt=""></p>
 <ul>
 <li>下一步我们要做的是删除kathiePlugin默认创建的部分文件 ，只留下部分的文件，其余全部删除了</li>
 </ul>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/6.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/6.png" alt=""></p>
 <p>那我们删了一些还要创建一些目标文件夹和文件</p>
 <p>首先我们要在<code>src/main/</code>这个路径下创建两个文件夹</p>
 <ul>
@@ -176,49 +177,49 @@
 <li>另外一个是<code>resources/META-INF/gradle-plugins</code></li>
 </ul>
 <p>注意⚠️ 这里的<strong>目录名字</strong>千万不能写错 。不然运行的时候就会找不到</p>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/7.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/7.png" alt=""></p>
 <p>基础的创建工作大概就完成了 下来就进入到完善插件内容和配置信息这部分</p>
 <h3 id="二-完善插件内容和配置信息"><a href="#二-完善插件内容和配置信息" class="headerlink" title="二. 完善插件内容和配置信息"></a>二. 完善插件内容和配置信息</h3><ul>
 <li>因为我们插件是用groovy语言写的（不用怕<br>我个人感觉和Java很像，而且不用会可以完成这篇教程，如果有深入研究的兴趣，可以自己找资料去看看）所以我们要把gradle改变一下成支持groovy的以及我们还要支持打包所以要用到maven。</li>
 </ul>
 <p>把插件下的gradle中的内容全部删除，将下面这段代码复制进去</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'groovy'</span></span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile gradleApi()</span><br><span class="line">    compile localGroovy()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/8.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/8.png" alt=""></p>
 <ul>
 <li>下一步要在<code>com/kathie/plugin</code>新建一个<code>xxx.groovy</code>的文件，我们找不到后缀为groovy的创建步骤<br>这样就可以了（new-&gt;file-&gt;myPlugin.groovy ） 这个groovy名字可以随便起嘛？当然可以 不过这个名字后面有用到<br>我这里的groovy叫做<code>myPlugin.groovy</code></li>
 </ul>
 <p>我们这个groovy文件的目标是成为gradle的 需要实现<code>org.gradle.api.Plugin</code>的接口 ，<code>apply()</code>方法中是插件执行的逻辑，我这个插件只是输出了 五句相同的代码，代码如下</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kathie.plugin</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.gradle.api.Plugin</span><br><span class="line"><span class="keyword">import</span> org.gradle.api.Project</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myPlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt;&#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line"></span><br><span class="line">        println <span class="string">"-----------this is kethie plugin!----------"</span></span><br><span class="line">        println <span class="string">"-----------this is kethie plugin!----------"</span></span><br><span class="line">        println <span class="string">"-----------this is kethie plugin!----------"</span></span><br><span class="line">        println <span class="string">"-----------this is kethie plugin!----------"</span></span><br><span class="line">        println <span class="string">"-----------this is kethie plugin!----------"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/9.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/9.png" alt=""></p>
 <p>我们创建了groovy 下来就要声明了</p>
 <ul>
 <li>声明文件在目录<code>resources/META-INF/gradle-plugins</code>下，我们新建一个<code>xxx.properties</code>的文件<br>注意这个文件的名字是之后我们引用插件（apply）所需要的名字</li>
 <li>这个文件的内容就是指明我们自定义的类</li>
 </ul>
 <p><code>implementation-class=自定义的类的路径</code></p>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/10.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/10.png" alt=""></p>
 <h3 id="三-打包发布并且正确引用自定义插件"><a href="#三-打包发布并且正确引用自定义插件" class="headerlink" title="三.打包发布并且正确引用自定义插件"></a>三.打包发布并且正确引用自定义插件</h3><ul>
 <li>前面我们已经自定义好了插件，下一步我们就要进行打包的过程了，我们需要在自定义插件的build.gradle里面指定打包的路径，版本号等参数信息代码指定好了之后我们需要编译一下<br><strong>点击右侧边栏 里面插件的build</strong>，代码如下</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'groovy'</span></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">'maven'</span></span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile gradleApi()</span><br><span class="line">    compile localGroovy()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line">uploadArchives &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        mavenDeployer &#123;</span><br><span class="line">            repository(<span class="string">url:</span> uri(<span class="string">'repo'</span>))</span><br><span class="line">            <span class="comment">//设置插件的GAV参数</span></span><br><span class="line">            pom.groupId = <span class="string">'com.kathie.myplugin'</span></span><br><span class="line">            pom.artifactId = <span class="string">'myPlugin'</span></span><br><span class="line">            pom.version = <span class="number">1.0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/11.png" alt="这里写图片描述"></p>
-<p>我们只是配置好了打包路径等等，还没有看到出现repo这个路径呢 那是因为我们还没有开始打包，还是右侧边栏的kathieplugin这个task下 在upload下面有一个<strong>uploadArchives</strong> 点击他就会开始打包了<br><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/12.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/11.png" alt=""></p>
+<p>我们只是配置好了打包路径等等，还没有看到出现repo这个路径呢 那是因为我们还没有开始打包，还是右侧边栏的kathieplugin这个task下 在upload下面有一个<strong>uploadArchives</strong> 点击他就会开始打包了<br><img src="/images/demoplugin/12.png" alt=""></p>
 <ul>
 <li>他build完我们就可以看到在同级目录下出现了repo文件夹，我们点开就可以看到我们打包好的插件了</li>
 </ul>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/13.png" alt="这里写图片描述"><br>至此 打包就完成啦。下一步就是我们怎么引用他了</p>
+<p><img src="/images/demoplugin/13.png" alt=""><br>至此 打包就完成啦。下一步就是我们怎么引用他了</p>
 <p>我们需要在两个<code>build.gradle</code>中进行操作</p>
 <ul>
 <li>一个是app下的<code>build.gradle</code> 我们需要将插件apply进去<br>apply后面的名字是我们之前说过的<code>xxx.properties</code>文件的名字</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'kathie-plugin'</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/14.png" alt="这里写图片描述"></p>
+<p><img src="/images/demoplugin/14.png" alt=""></p>
 <ul>
 <li>还有一个是在project下的<code>build.gradle</code> ，我们需要指定插件的地址和版本之类的信息 这个跟的地址是repo的地址</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; </span><br><span class="line">        url uri(<span class="string">"/Users/katherine/AndroidStudioProjects/DemoPlugin/kathieplugin/repo"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">dependencies &#123;</span><br><span class="line">       classpath <span class="string">'com.kathie.myplugin:myPlugin:1.0'</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/15.png" alt="这里写图片描述"></p>
-<p> 配置完了之后 我们重新编译一下 如果没有错误的话就可以在下面的gradleConsole中看到我们apply里面执行的逻辑啦<br><img src="https://github.com/katherineqj/MIAOMIAO/blob/master/16.png" alt="这里写图片描述"><br> 好啦 这样我们就为gradle写好了一个自定义的插件了。</p>
+<p><img src="/images/demoplugin/15.png" alt=""></p>
+<p> 配置完了之后 我们重新编译一下 如果没有错误的话就可以在下面的gradleConsole中看到我们apply里面执行的逻辑啦<br><img src="/images/demoplugin/16.png" alt=""><br> 好啦 这样我们就为gradle写好了一个自定义的插件了。</p>
 <p>有了这个基础 如果我们有一些在编译期间需要完成的需求就可以在插件中完成了。</p>
 <ul>
 <li>讲给自己：</li>
@@ -230,12 +231,12 @@
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#Android" >
-    <span class="tag-code">Android</span>
-  </a>
-
   <a href="/tags#Gradle" >
     <span class="tag-code">Gradle</span>
+  </a>
+
+  <a href="/tags#Android" >
+    <span class="tag-code">Android</span>
   </a>
 
       </div>
